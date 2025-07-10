@@ -292,7 +292,7 @@ spec:
               type: string
           steps:
             - name: e2e-cleanup
-              image: registry.redhat.io/openshift4/ose-cli:v4.12@sha256:0d21299d2adfa3cb74562c4dffbedd3b107fffac3a2a537f14770088abd4671f
+              image: registry.redhat.io/openshift4/ose-cli:v4.12@sha256:e12cd95f17165a6ad0c87c31f5ed3998c18b060ce00ab5d0b6600635d5653377
               script: |
                 #!/usr/bin/env bash
                 # Perform cleanup of resources created by gitops service
