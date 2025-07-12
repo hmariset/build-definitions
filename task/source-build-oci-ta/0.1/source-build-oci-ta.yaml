@@ -55,7 +55,7 @@ spec:
         name: workdir
   steps:
     - name: use-trusted-artifact
-      image: quay.io/redhat-appstudio/build-trusted-artifacts:latest@sha256:ff35e09ff5c89e54538b50abae241a765b2b7868f05d62c4835bebf0978f3659
+      image: quay.io/redhat-appstudio/build-trusted-artifacts:latest@sha256:9b180776a41d9a22a1c51539f1647c60defbbd55b44bbebdd4130e33512d8b0d
       args:
         - use
         - $(params.SOURCE_ARTIFACT)=/var/workdir/source
@@ -114,7 +114,7 @@ spec:
             | .name + "@" + $matched.digest
         ' <<<"$sbom" | tee "$BASE_IMAGES_FILE"
     - name: build
-      image: quay.io/konflux-ci/source-container-build:latest@sha256:4002c18472e33b5f3d2b92e7897b0b31e4181dd5f8b8a3c4097937035e899ba3
+      image: quay.io/konflux-ci/source-container-build:latest@sha256:ffe5b1c86d02c5f46b8fa90e92a4a01ae2a13f341c9cfc9d654081ae6a8f5bdf
       workingDir: /var/workdir
       env:
         - name: SOURCE_DIR

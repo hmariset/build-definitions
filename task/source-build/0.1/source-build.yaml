@@ -102,7 +102,7 @@ spec:
         ' <<< "$sbom" | tee "$BASE_IMAGES_FILE"
 
     - name: build
-      image: quay.io/konflux-ci/source-container-build:latest@sha256:4002c18472e33b5f3d2b92e7897b0b31e4181dd5f8b8a3c4097937035e899ba3
+      image: quay.io/konflux-ci/source-container-build:latest@sha256:ffe5b1c86d02c5f46b8fa90e92a4a01ae2a13f341c9cfc9d654081ae6a8f5bdf
       # per https://kubernetes.io/docs/concepts/containers/images/#imagepullpolicy-defaulting
       # the cluster will set imagePullPolicy to IfNotPresent
       computeResources:
