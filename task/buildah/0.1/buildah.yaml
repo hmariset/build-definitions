@@ -170,7 +170,7 @@ spec:
       value: $(params.SKIP_UNUSED_STAGES)
 
   steps:
-  - image: quay.io/konflux-ci/buildah-task:latest@sha256:b2d6c32d1e05e91920cd4475b2761d58bb7ee11ad5dff3ecb59831c7572b4d0c
+  - image: quay.io/konflux-ci/buildah-task:latest@sha256:c8d667a4efa2f05e73e2ac36b55928633d78857589165bd919d2628812d7ffcb
     name: build
     computeResources:
       limits:
@@ -383,7 +383,7 @@ spec:
     workingDir: $(workspaces.source.path)
 
   - name: sbom-syft-generate
-    image: registry.access.redhat.com/rh-syft-tech-preview/syft-rhel9:1.4.1@sha256:34d7065427085a31dc4949bd283c001b91794d427e1e4cdf1b21ea4faf9fee3f
+    image: registry.access.redhat.com/rh-syft-tech-preview/syft-rhel9:1.19.0@sha256:070ecb89de5104bb64fbf399a991a975e7d4d7e0cea0f7beb1e591b5591991c8
     # Respect Syft configuration if the user has it in the root of their repository
     # (need to set the workdir, see https://github.com/anchore/syft/issues/2465)
     workingDir: $(workspaces.source.path)/source
@@ -415,7 +415,7 @@ spec:
       runAsUser: 0
 
   - name: merge-syft-sboms
-    image: registry.access.redhat.com/ubi9/python-39:9.5-1734610342@sha256:dde5068ba8fd81eef41a9128ddad2b99e2e02e5869ffe925c605b609a0ad7bbb
+    image: registry.access.redhat.com/ubi9/python-39:9.6-1751949096@sha256:9abbe4197016ee25f2f239aa78cbbec108bafd9a3ffc488f0069a7f650faf94d
     script: |
       #!/bin/python3
       import json
@@ -464,7 +464,7 @@ spec:
       runAsUser: 0
 
   - name: create-purl-sbom
-    image: registry.access.redhat.com/ubi9/python-39:9.5-1734610342@sha256:dde5068ba8fd81eef41a9128ddad2b99e2e02e5869ffe925c605b609a0ad7bbb
+    image: registry.access.redhat.com/ubi9/python-39:9.6-1751949096@sha256:9abbe4197016ee25f2f239aa78cbbec108bafd9a3ffc488f0069a7f650faf94d
     script: |
       #!/bin/python3
       import json
@@ -493,7 +493,7 @@ spec:
       runAsUser: 0
 
   - name: inject-sbom-and-push
-    image: quay.io/konflux-ci/buildah-task:latest@sha256:b2d6c32d1e05e91920cd4475b2761d58bb7ee11ad5dff3ecb59831c7572b4d0c
+    image: quay.io/konflux-ci/buildah-task:latest@sha256:c8d667a4efa2f05e73e2ac36b55928633d78857589165bd919d2628812d7ffcb
     computeResources: {}
     script: |
       if [ -n "${PARAM_BUILDER_IMAGE}" ]; then
