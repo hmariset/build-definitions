@@ -41,7 +41,7 @@ spec:
     - name: TASK_FILE
       value: tekton_task_files
   steps:
-  - image: quay.io/konflux-ci/konflux-test:latest@sha256:2224fabdb0a28a415d4af4c58ae53d7c4c53c83c315f12e07d1d7f48a80bfa70
+  - image: quay.io/konflux-ci/konflux-test:latest@sha256:a7cae9e96663e277a3904d0c78630508ddb6cc8eebaa912a840bd20f68dcaad1
     name: modify-task-files
     env:
     - name: CONTEXT
@@ -112,7 +112,7 @@ spec:
 
       printf "%s\n" "${FILES[@]}" > "${TASK_FILE}"
     workingDir: $(workspaces.source.path)
-  - image: registry.redhat.io/openshift-pipelines/pipelines-cli-tkn-rhel8:v1.13.1@sha256:575faccd21c06a4f33e39382b9dc17681c60b41ef0e124d2980b75c39909c36a
+  - image: registry.redhat.io/openshift-pipelines/pipelines-cli-tkn-rhel8:v1.17.2@sha256:429bc3d6044ca7dab780ff4b5eb91d42d38a29eb7ef428a25c53b7dda49871bf
     name: build
     env:
     - name: CONTEXT
