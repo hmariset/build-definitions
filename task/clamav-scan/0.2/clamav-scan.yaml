@@ -163,7 +163,7 @@ spec:
           subPath: ca-bundle.crt
           readOnly: true
     - name: upload
-      image: quay.io/konflux-ci/oras:latest@sha256:7a85f12b14b9122df29450dfa60c6d035b04db1a7372f7b606a0fb74ed716844
+      image: quay.io/konflux-ci/oras:latest@sha256:7f70f3235f77a9a84e9d5c386564ab367766f98b282b19ae0eaf167d0dcba5d7
       computeResources:
         limits:
           memory: 512Mi

@@ -95,7 +95,7 @@ spec:
         name: workdir
   steps:
     - name: use-trusted-artifact
-      image: quay.io/redhat-appstudio/build-trusted-artifacts:latest@sha256:81c4864dae6bb11595f657be887e205262e70086a05ed16ada827fd6391926ac
+      image: quay.io/redhat-appstudio/build-trusted-artifacts:latest@sha256:9b180776a41d9a22a1c51539f1647c60defbbd55b44bbebdd4130e33512d8b0d
       args:
         - use
         - $(params.SOURCE_ARTIFACT)=/var/workdir/source
@@ -288,7 +288,7 @@ spec:
           cpu: "8"
           memory: 16Gi
     - name: upload
-      image: quay.io/konflux-ci/oras:latest@sha256:99737f436051e6d3866eb8a8706463c35abf72c87f05090ff42ff642f6729661
+      image: quay.io/konflux-ci/oras:latest@sha256:7f70f3235f77a9a84e9d5c386564ab367766f98b282b19ae0eaf167d0dcba5d7
       workingDir: /var/workdir
       env:
         - name: IMAGE_URL
