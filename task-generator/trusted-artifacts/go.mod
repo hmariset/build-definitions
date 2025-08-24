@@ -1,6 +1,8 @@
 module github.com/konflux-ci/build-definitions/task-generator/trusted-artifacts
 
-go 1.22.7
+go 1.23
+
+toolchain go1.24.6
 
 require (
 	github.com/google/go-cmp v0.6.0
@@ -93,6 +95,6 @@ require (
 	k8s.io/kube-openapi v0.0.0-20240521193020-835d969ad83a // indirect
 	k8s.io/utils v0.0.0-20240502163921-fe8a2dddb1d0 // indirect
 	knative.dev/pkg v0.0.0-20240604134003-58135c2c0694 // indirect
-	sigs.k8s.io/json v0.0.0-20221116044647-bc3834ca7abd // indirect
+	sigs.k8s.io/json v0.0.0-20250730193827-2d320260d730 // indirect
 	sigs.k8s.io/structured-merge-diff/v4 v4.4.1 // indirect
 )
