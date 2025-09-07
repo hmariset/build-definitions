@@ -1,6 +1,8 @@
 module github.com/konflux-ci/build-definitions/task-generator/trusted-artifacts
 
-go 1.22.7
+go 1.24.0
+
+toolchain go1.24.6
 
 require (
 	github.com/google/go-cmp v0.6.0
@@ -73,7 +75,7 @@ require (
 	golang.org/x/exp v0.0.0-20240604190554-fc45aab8b7f8 // indirect
 	golang.org/x/net v0.28.0 // indirect
 	golang.org/x/oauth2 v0.22.0 // indirect
-	golang.org/x/sync v0.8.0 // indirect
+	golang.org/x/sync v0.17.0 // indirect
 	golang.org/x/sys v0.26.0 // indirect
 	golang.org/x/term v0.25.0 // indirect
 	golang.org/x/text v0.17.0 // indirect
