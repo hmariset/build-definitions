@@ -1,14 +1,14 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
-    "config:base"
+    "config:recommended"
   ],
   "dependencyDashboard": false,
   "prConcurrentLimit": 20,
   "tekton": {
-    "fileMatch": [
-      "\\.yaml$",
-      "\\.yml$"
+    "managerFilePatterns": [
+      "/\\.yaml$/",
+      "/\\.yml$/"
     ],
     "includePaths": [
       ".tekton/**",
@@ -197,8 +197,8 @@
   "customManagers": [
     {
       "customType": "regex",
-      "fileMatch": [
-        "^task/[\\w-]+/[0-9.]+/[\\w-]+\\.yaml$"
+      "managerFilePatterns": [
+        "/^task/[\\w-]+/[0-9.]+/[\\w-]+\\.yaml$/"
       ],
       "matchStrings": [
         "value: (?<depName>quay\\.io/konflux-ci/buildah[^:]*):(?<currentValue>[^@]*)@(?<currentDigest>sha256:[a-f0-9]{64})"
@@ -208,8 +208,8 @@
     },
     {
       "customType": "regex",
-      "fileMatch": [
-        ".github/workflows/run-task-tests.yaml"
+      "managerFilePatterns": [
+        "/.github/workflows/run-task-tests.yaml/"
       ],
       "matchStrings": [
         "ref:\\s+(?<currentDigest>[a-f0-9]{40})"
@@ -221,8 +221,8 @@
     },
     {
       "customType": "regex",
-      "fileMatch": [
-        "^task/.*/recipe\\.yaml$"
+      "managerFilePatterns": [
+        "/^task/.*/recipe\\.yaml$/"
       ],
       "matchStrings": [
         "image: (?:['\"])?(?<depName>.*):(?<currentValue>[^@]*)@(?<currentDigest>sha256:[a-f0-9]{64})(?:['\"])?"
