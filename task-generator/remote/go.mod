@@ -1,8 +1,8 @@
 module github.com/konflux-ci/build-definitions/task-generator/remote
 
-go 1.22.0
+go 1.24.0
 
-toolchain go1.23.2
+toolchain go1.24.6
 
 require (
 	github.com/tektoncd/pipeline v0.66.0
@@ -65,7 +65,7 @@ require (
 	golang.org/x/net v0.28.0 // indirect
 	golang.org/x/oauth2 v0.22.0 // indirect
 	golang.org/x/sync v0.8.0 // indirect
-	golang.org/x/sys v0.24.0 // indirect
+	golang.org/x/sys v0.37.0 // indirect
 	golang.org/x/term v0.23.0 // indirect
 	golang.org/x/text v0.17.0 // indirect
 	golang.org/x/time v0.5.0 // indirect
