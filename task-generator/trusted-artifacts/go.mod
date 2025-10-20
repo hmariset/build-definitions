@@ -1,6 +1,8 @@
 module github.com/konflux-ci/build-definitions/task-generator/trusted-artifacts
 
-go 1.22.7
+go 1.23
+
+toolchain go1.24.6
 
 require (
 	github.com/google/go-cmp v0.6.0
@@ -49,7 +51,7 @@ require (
 	github.com/grpc-ecosystem/grpc-gateway/v2 v2.20.0 // indirect
 	github.com/josharian/intern v1.0.0 // indirect
 	github.com/json-iterator/go v1.1.12 // indirect
-	github.com/klauspost/compress v1.16.7 // indirect
+	github.com/klauspost/compress v1.18.1 // indirect
 	github.com/mailru/easyjson v0.7.7 // indirect
 	github.com/mitchellh/go-homedir v1.1.0 // indirect
 	github.com/modern-go/concurrent v0.0.0-20180306012644-bacd9c7ef1dd // indirect
