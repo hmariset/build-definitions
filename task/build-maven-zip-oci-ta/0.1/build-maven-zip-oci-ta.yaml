@@ -89,12 +89,12 @@ spec:
         name: workdir
   steps:
     - name: use-trusted-artifact
-      image: quay.io/redhat-appstudio/build-trusted-artifacts:latest@sha256:b31dc501d5068e30621e51681a2921d4e43f5a030ab78c8991f83a5e774534a3
+      image: quay.io/redhat-appstudio/build-trusted-artifacts:latest@sha256:9b180776a41d9a22a1c51539f1647c60defbbd55b44bbebdd4130e33512d8b0d
       args:
         - use
         - $(params.CACHI2_ARTIFACT)=/var/workdir/cachi2
     - name: prepare
-      image: quay.io/konflux-ci/appstudio-utils@sha256:426143910a9fe57a340143f8c19f1ad8e7103749be84096c3faacc20b260b15a
+      image: quay.io/konflux-ci/appstudio-utils@sha256:77f4b7a256b7566a295882bdc89e60efaff55c72ce001bf7b863f84449688ed4
       workingDir: /var/workdir
       script: |
         #!/bin/bash
@@ -132,7 +132,7 @@ spec:
           add:
             - SETFCAP
     - name: build
-      image: quay.io/konflux-ci/oras:latest@sha256:66ccc8c3698304036a42739f6e1836f3399a46645be2d3c5d6d456b9c79fff40
+      image: quay.io/konflux-ci/oras:latest@sha256:4542f5a2a046ca36653749a8985e46744a5d2d36ee10ca14409be718ce15129e
       workingDir: /var/workdir
       volumeMounts:
         - mountPath: /mnt/trusted-ca
