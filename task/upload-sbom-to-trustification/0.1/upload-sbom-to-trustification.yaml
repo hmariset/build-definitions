@@ -137,7 +137,7 @@ spec:
 
   # Needs syft, which is in a different image => has to be a separate step
   - name: convert-sboms-if-needed
-    image: registry.redhat.io/rh-syft-tech-preview/syft-rhel9:1.0.1@sha256:27c268d678103a27b6964c2cd5169040941b7304d0078f9727789ffb8ffba370
+    image: registry.redhat.io/rh-syft-tech-preview/syft-rhel9:1.29.0@sha256:15ed82f0b5311a570ccb8ea02135d9776c6d61e545c51b256b3fc5b5db20ba67
     script: |
       #!/usr/bin/env bash
       set -o errexit -o nounset -o pipefail
