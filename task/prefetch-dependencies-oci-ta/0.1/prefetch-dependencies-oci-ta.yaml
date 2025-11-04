@@ -128,7 +128,7 @@ spec:
         name: workdir
   steps:
     - name: skip-ta
-      image: registry.access.redhat.com/ubi9/ubi-minimal:9.5-1734497536@sha256:94b434a29a894129301f6ff52dbddb19422fc800a109170c634b056da8cd704f
+      image: registry.access.redhat.com/ubi9/ubi-minimal:9.6-1760515502@sha256:34880b64c07f28f64d95737f82f891516de9a3b43583f39970f7bf8e4cfa48b7
       env:
         - name: INPUT
           value: $(params.input)
@@ -144,12 +144,12 @@ spec:
           echo -n "" >$(results.CACHI2_ARTIFACT.path)
         fi
     - name: use-trusted-artifact
-      image: quay.io/redhat-appstudio/build-trusted-artifacts:latest@sha256:ff35e09ff5c89e54538b50abae241a765b2b7868f05d62c4835bebf0978f3659
+      image: quay.io/redhat-appstudio/build-trusted-artifacts:latest@sha256:9b180776a41d9a22a1c51539f1647c60defbbd55b44bbebdd4130e33512d8b0d
       args:
         - use
         - $(params.SOURCE_ARTIFACT)=/var/workdir/source
     - name: sanitize-cachi2-config-file-with-yq
-      image: quay.io/konflux-ci/yq:latest@sha256:99fb3254efcfd6a96977bcda12b4b74b872831f524e02938f9fa0d4ae797ffe2
+      image: quay.io/konflux-ci/yq:latest@sha256:41aee71bcaa8a759073e00d6acea358fbc4013ad6e28554729451606c0c35591
       script: |
         if [ -n "${CONFIG_FILE_CONTENT}" ]; then
           # we need to drop 'goproxy_url' for safety reasons until cachi2 decides what the SBOM
@@ -414,7 +414,7 @@ spec:
         cp /shared/rhsm/entitlement/* /etc/pki/entitlement/
         subscription-manager unregister || true
     - name: create-trusted-artifact
-      image: quay.io/redhat-appstudio/build-trusted-artifacts:latest@sha256:ff35e09ff5c89e54538b50abae241a765b2b7868f05d62c4835bebf0978f3659
+      image: quay.io/redhat-appstudio/build-trusted-artifacts:latest@sha256:9b180776a41d9a22a1c51539f1647c60defbbd55b44bbebdd4130e33512d8b0d
       args:
         - create
         - --store

@@ -154,7 +154,7 @@ spec:
         fi
 
     - name: report
-      image: registry.access.redhat.com/ubi8-minimal@sha256:cf095e5668919ba1b4ace3888107684ad9d587b1830d3eb56973e6a54f456e67
+      image: registry.access.redhat.com/ubi8-minimal@sha256:951ee3cabb74246821ae31c2b808b7789310f5509882c153b7b178aaaeefa2d3
       volumeMounts:
         - name: repository
           mountPath: /workspace/repository

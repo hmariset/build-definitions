@@ -72,7 +72,7 @@ spec:
       - name: shared-dir
         mountPath: /index-build-data
   steps:
-  - image: quay.io/konflux-ci/buildah-task:latest@sha256:b2d6c32d1e05e91920cd4475b2761d58bb7ee11ad5dff3ecb59831c7572b4d0c
+  - image: quay.io/konflux-ci/buildah-task:latest@sha256:27400eaf836985bcc35182d62d727629f061538f61603c05b85d5d99bfa7da2d
     # per https://kubernetes.io/docs/concepts/containers/images/#imagepullpolicy-defaulting
     # the cluster will set imagePullPolicy to IfNotPresent
     name: build
@@ -163,7 +163,7 @@ spec:
         add:
           - SETFCAP
 
-  - image: quay.io/redhat-appstudio/sbom-utility-scripts-image@sha256:9f1fd11d9c3c517ecc112d192ad361d16ecf6ce00b83b109c93cf3d1c644a357
+  - image: quay.io/redhat-appstudio/sbom-utility-scripts-image@sha256:608c719f163b98410b3f96e1c42232d064445857fb90144ccf73b9b677b29db5
     name: create-sbom
     computeResources:
       limits:
